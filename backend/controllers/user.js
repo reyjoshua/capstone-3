@@ -103,7 +103,7 @@ module.exports.update = (userId, params) => {
 	const updates = {
 		firstName: params.firstName,
 		lastName: params.lastName,
-		password: params.password
+		password: bcrypt.hashSync(params.password, 10)
 	}
 	return User.findByIdAndUpdate(userId, updates).then((doc, err) => {
 		return (err) ? false : true

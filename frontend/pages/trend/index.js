@@ -34,7 +34,7 @@ function index() {
         </Head>
         <h1 className="text-center">TREND</h1>
         <div className="form-group row">
-                <label for="example-date-input" className="col-2 col-form-label">Date</label>
+                <label htmlFor="example-date-input" className="col-2 col-form-label">Date</label>
                 <div className="container-fluid row">
                     <div className="col-6">
                     <input className="form-control" type="date" onChange={(e) => setStartDate(moment(e.currentTarget.value))} value={startDate.format("YYYY-MM-DD")}/>
