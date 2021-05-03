@@ -276,7 +276,7 @@ function ExpenseHistory({ history, searchItem, sortBy }) {
     <ul className="list">
       {history.map((transaction) => {
         if (transaction.text.includes(searchItem)) {
-          return <li className={transaction.amount < 0 ? 'minus' : 'plus'}>{transaction.text}<span className="text-">{transaction.amount < 0 ? '-' : '+'}{moneyFormatter(transaction.amount)}<br/>{moment(date).format('MMMM-DD-YYYY')}</span><button type="button" className="delete-btn" onClick={(e) => onDelete(transaction._id)}>x</button></li>
+          return <li className={transaction.amount < 0 ? 'minus' : 'plus'}>{transaction.text}<span className="text-">{transaction.amount < 0 ? '-' : '+'}{moneyFormatter(transaction.amount)}<br/>{moment(transaction.createdOn).format('MMMM-DD-YYYY')}</span><button type="button" className="delete-btn" onClick={(e) => onDelete(transaction._id)}>x</button></li>
         }
       })}
     </ul>
